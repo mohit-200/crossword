@@ -1,0 +1,231 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <script>
+        let i = 0;
+        var bleep = new Audio();
+        bleep.src = "click1.mp3";
+
+        function sound() {
+            bleep.play();
+        }
+
+        function answercheck() {
+            let answer = "'" + document.querySelector("input").value + "'";
+            for (let node of document.querySelectorAll("td")) {
+                if (node.className.indexOf(answer) >= 0) {
+                    node.style = "color:black";
+                    node.querySelector("span").className = "ans_correct";
+                    i++;
+                }
+            }
+
+
+
+
+            document.getElementById("input").value = "";
+
+            if (i == 28) {
+                document.getElementById("input").value = "Great Work! All correct!";
+                document.getElementById("click").className = "ans_correct text";
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Carter One', cursive;
+        }
+        
+        .text {
+            font-family: 'Carter One', cursive;
+            text-align: center;
+            align-content: center;
+        }
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        body {
+            background-image: url("paper.gif");
+            background-color: lightgrey;
+            align-content: center;
+        }
+        
+        td {
+            border: 1px solid black;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            color: lightgrey;
+        }
+        
+        td:empty {
+            background: black;
+            color: black;
+        }
+        
+        sup {
+            color: black;
+            visibility: visible;
+        }
+        
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .column {
+            float: left;
+            width: 50%;
+        }
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .answer {
+            visibility: hidden;
+        }
+        
+        .ans_correct {
+            visibility: visible;
+        }
+        
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text" id="#">
+        crossword puzzle
+    </h1>
+    <table class="center">
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="'notebook' " id=""><sup>4 </sup><span class="answer">n</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="'spring' "><sup>5 </sup><span class="answer">s</span></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="'notebook' "><span class="answer">o</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="'spring' "><span class="answer">p</span></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="'notebook' 'tiger' "><sup>1 </sup><span class="answer">t</span></td>
+            <td class="'tiger' "><span class="answer">i</span></td>
+            <td class="'tiger' "><span class="answer">g</span></td>
+            <td class="'tiger' "><span class="answer">e</span></td>
+            <td class="'tiger''spring' "><span class="answer">r</span></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="'notebook' "><span class="answer">e</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="'spring' "><span class="answer">i</span></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="'notebook' "><span class="answer">b</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="'spring' "><span class="answer">n</span></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td class="'boxing' "><sup>2 </sup><span class="answer">b</span></td>
+            <td class="'notebook' 'boxing' "><span class="answer">o</span></td>
+            <td class="'boxing' "><span class="answer">x</span></td>
+            <td class="'boxing' "><span class="answer">i</span></td>
+            <td class="'boxing' "><span class="answer">n</span></td>
+            <td class="'boxing''spring' "><span class="answer">g</span></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="'notebook' "><span class="answer">o</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="'notebook' "><span class="answer">k</span></td>
+            <td></td>
+            <td></td>
+            <td class="'rat'"><sup>3 </sup><span class="answer">r</span></td>
+            <td class="'rat'"><span class="answer">a</span></td>
+            <td class="'rat'"><span class="answer">t</span></td>
+
+        </tr>
+
+    </table>
+    <div class="row">
+        <div class="column">
+            <h2>
+                CLUES FOR ACROSS
+            </h2>
+            <p>1. National Animal <br>2. Fighting with gloves on <br>3. Cat loves to eat
+            </p>
+        </div>
+        <div class="column">
+            <h2>
+                CLUES FOR DOWNWARD
+            </h2>
+            <p>4. Book with blank pages for writing<br>5. One of the seasons
+            </p>
+        </div>
+    </div>
+    <form autocomplete="off" onsubmit="javascript:answercheck()" onfocus="javascript:clear()" action="javascript:null" class="text">
+        <input autocomplete="off" class="text" id="input" onmousedown="bleep.play()" onkeypress="sound()">
+    </form>
+    <div class="answer" id="click">
+        <button type="button"><a href="ht.html" class="btn" onmousedown="bleep.play()">PLAY AGAIN</a></button>
+    </div>
+    <audio loop autoplay hidden>
+        <source src="../ring.mp3" type="audio/mp3" />
+      </audio>
+</body>
+
+</html>
