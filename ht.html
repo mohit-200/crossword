@@ -13,7 +13,8 @@
         }
 
         function answercheck() {
-            let answer = "'" + document.querySelector("input").value + "'";
+            let text = "'" + document.querySelector("input").value + "'";
+            var answer = text.toLowerCase();
             for (let node of document.querySelectorAll("td")) {
                 if (node.className.indexOf(answer) >= 0) {
                     node.style = "color:black";
